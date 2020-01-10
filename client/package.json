@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "realtor-assist",
   "version": "0.1.0",
-  "description": "Mern Demo",
+  "description": "A realtor assistant app",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
