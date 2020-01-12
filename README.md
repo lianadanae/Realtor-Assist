@@ -1,29 +1,46 @@
-# Create React Express App
+# Realtor Assist
+  A Realtor assistant app.
 
-## About This Boilerplate
 
-This setup allows for a Node/Express/React app which can be easily deployed to Heroku.
+## Technologies Used
 
-The front-end React app will auto-reload as it's updated via webpack dev server, and the backend Express app will auto-reload independently with nodemon.
+- Mongodb
+- Express
+- React
+- Node.js
+- Bootstrap
 
-## Starting the app locally
+### Links
+* SPA Framework
+  * https://reactjs.org/
+* CSS
+  * https://bootswatch.com/
+* Component Framework
+  * https://react-bootstrap.github.io/
+  * https://getbootstrap.com/
+* Forms
+  * https://jaredpalmer.com/formik/
+  * Validation: https://www.npmjs.com/package/yup
+* JWT (JSON Web Token) handling
+  * Client
+    * https://github.com/eezing/jwt-jot
+    * https://www.npmjs.com/package/jwt-jot
+  * Server
+    * jsonwebtoken: https://github.com/auth0/node-jsonwebtoken#readme
+  * JWT testing: https://jwt.io/
+* AJAX
+  * https://www.npmjs.com/package/axios
+* Routing
+  * https://reacttraining.com/react-router/
 
-Start by installing front and backend dependencies. While in this directory, run the following command:
-
-```
-npm install
-```
-
-This should install node modules within the server and the client folder.
-
-After both installations complete, run the following command in your terminal:
-
-```
-npm start
-```
-
-Your app should now be running on <http://localhost:3000>. The Express server should intercept any AJAX requests from the client.
-
-## Deployment (Heroku)
-
-To deploy, simply add and commit your changes, and push to Heroku. As is, the NPM scripts should take care of the rest.
+### Server
+* Auth
+  * http://www.passportjs.org/
+  * http://www.passportjs.org/docs/configure/
+  * http://www.passportjs.org/packages/passport-jwt/
+  * https://www.npmjs.com/package/bcrypt
+* Data
+  * https://www.mongodb.com/
+  * https://mongoosejs.com/
+* Server
+  * https://expressjs.com/
