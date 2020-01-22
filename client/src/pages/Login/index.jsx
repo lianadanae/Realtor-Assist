@@ -30,7 +30,7 @@ const Login = (props) => {
         </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-            <h5 className="card-title">Login to your property listings</h5>
+            <h5 className="card-title">Login to your dashboard</h5>
             <Formik
                 initialValues={{ username: '', password: '' }}
                 validationSchema={schema}
