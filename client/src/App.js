@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import Splash from "./pages/Splash";
 import Login from './pages/Login';
 import Listings from "./pages/Listing";
+import AddNewListing from "./pages/AddNewListing";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
@@ -21,6 +22,7 @@ export default function App() {
           <ConnectedPublicRoute path="/login" component={Login} />
           <ConnectedPublicRoute path="/signup" component={Signup} />
           <ConnectedPrivateRoute exact path="/listings" component={Listings} />
+          <ConnectedPrivateRoute path="/AddNewListing" component={AddNewListing} />
           <ConnectedPrivateRoute path="/listings/:id" component={Detail} />
           <Route path="*"><NoMatch /></Route>
         </Switch>
