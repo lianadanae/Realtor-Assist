@@ -10,7 +10,6 @@ import "react-datepicker/dist/react-datepicker.css";
 
 class AddNewListing extends Component {
   state = {
-    listings: [],
     address: "",
     startDate: new Date(),
     notes: ""
@@ -23,8 +22,6 @@ class AddNewListing extends Component {
       )
       .catch(err => console.log(err));
   };
-
-  //handleSelect 
 
 
   handleChange = date => {
@@ -42,10 +39,10 @@ class AddNewListing extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.address && this.state.date) {
+    if (this.state.address && this.state.startDate) {
       API.saveListing({
         address: this.state.address,
-        date: this.state.date,
+        date: this.state.startDate,
         notes: this.state.notes
       })
         .then(res => {
@@ -92,9 +89,10 @@ class AddNewListing extends Component {
               />
               <Form.Label>Date Listed</Form.Label>
               <DatePicker
-                selected={this.state.date}
+                selected={this.state.startDate}
                 onSelect={this.handleSelect} //when day is clicked
                 onChange={this.handleChange} //only when value has changed
+                dateFormat="MM/dd/yy"
                 name="date"
                 placeholder="Date Listed (required)"
               />
@@ -113,7 +111,7 @@ class AddNewListing extends Component {
         </Modal.Body>
         <Modal.Footer>
         <FormBtn
-                disabled={!(this.state.date && this.state.address)}
+                disabled={!(this.state.startDate && this.state.address)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Listing
