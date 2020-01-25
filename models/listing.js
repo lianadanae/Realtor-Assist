@@ -3,9 +3,9 @@ const Schema = mongoose.Schema;
 
 const listingSchema = new Schema({
   address: { type: String, required: true },
-  dateListed: { type: Date, default: Date.now },
-  // status: Active, deposit, closed, cancelled
-  
+  startDate: { type: Date, default: Date.now },
+  notes: {type: String},
+  check: {type: Boolean, default: false},
   user: { type: Schema.Types.ObjectId, ref: 'User', required: true}
 });
 
