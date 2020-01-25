@@ -2,24 +2,15 @@ import React, { Component } from "react";
 //import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../api";
-//import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-//import { List, ListItem } from "../components/List";
-import { Input, TextArea, FormBtn } from "../components/Form";
 import CardHolder from "../components/CardHolder";
-import { Card, Form, FormGroup } from "react-bootstrap";
-import DatePicker from "react-datepicker";
- 
-import "react-datepicker/dist/react-datepicker.css";
-//import SideNav from "../components/SideNav";
-// import { Chevron, Icon, NavLink, menuItems } from "../components/SideNav";
+import { Card, Form } from "react-bootstrap";
 
 class Listings extends Component {
   state = {
     listings: [],
     address: "",
     startDate: new Date(),
-    status: "",
     notes: ""
   };
 
@@ -30,7 +21,7 @@ class Listings extends Component {
   loadListings = () => {
     API.getListings()
       .then(res =>
-        this.setState({ listings: res.data, address: "", startDate: new Date(), status: "", notes: "" })
+        this.setState({ listings: res.data, address: "", startDate: new Date(), notes: "" })
       )
       .catch(err => console.log(err));
   };
@@ -48,79 +39,10 @@ class Listings extends Component {
     });
   };
 
-  handleChange = date => {
-    this.setState({
-      startDate: date
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.address && this.state.date) {
-      API.saveListing({
-        address: this.state.address,
-        date: this.state.date,
-        status: this.state.status,
-        notes: this.state.notes
-      })
-        .then(res => this.loadListings())
-        .catch(err => console.log(err));
-    }
-  };
-
   render() {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>Add a new listing</h1>
-            </Jumbotron>
-           <CardHolder></CardHolder>
-
-            <Form>
-              <FormGroup>
-              <Form.Label>Address</Form.Label>
-              <Input
-                value={this.state.address}
-                onChange={this.handleInputChange}
-                name="address"
-                placeholder="(required)"
-              />
-              <Form.Label>Date Listed</Form.Label>
-              <DatePicker
-                selected={this.state.date}
-                onSelect={this.handleSelect} //when day is clicked
-                onChange={this.handleChange} //only when value has changed
-                name="date"
-                placeholder="Date Listed (required)"
-              />
-              <Form.Label>Status</Form.Label>
-              <Input
-                value={this.state.status}
-                onChange={this.handleInputChange}
-                name="status"
-                placeholder="(required)"
-              />
-              <Form.Label>Notes</Form.Label>
-              <TextArea
-                value={this.state.notes}
-                onChange={this.handleInputChange}
-                name="notes"
-                placeholder="(Optional)"
-              />
-
-              <FormBtn
-                disabled={!(this.state.date && this.state.address)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Listing
-              </FormBtn>
-              </FormGroup>
-            </Form>
-          </Col>
-
-          {/* Listings */}
           <Col size="md-6 sm-12">
             <Jumbotron>
               <h1>My Property Listings</h1>
@@ -132,8 +54,8 @@ class Listings extends Component {
   <Card.Body>
     <Card.Title>{listing.address}</Card.Title>
     <Card.Text>
-      Some quick example text to build on the card title and make up the bulk of
-      the card's content.
+    {listing.startDate}
+    {listing.notes}
     </Card.Text>
   </Card.Body>
   <Form>
@@ -150,13 +72,10 @@ class Listings extends Component {
       ))}
       </Form.Group>
       </Form>
-
-  <Card.Body>
-    <Card.Link href="#">Card Link</Card.Link>
-  </Card.Body>
 </Card>
             )}
         )}
+<CardHolder></CardHolder>
 
             {/* {this.state.listings.length ? (
               <List>
