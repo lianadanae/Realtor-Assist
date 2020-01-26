@@ -72,7 +72,7 @@ class Listings extends Component {
     </Card.Text>
   </Card.Body>
  
-      <CheckBoxes></CheckBoxes>
+      <CheckBoxes listing={listing}></CheckBoxes>
 </Card>
             )}
         )}
