@@ -20,6 +20,9 @@ export default {
     // Saves a listing to the database
     saveListing: function (listingData) {
         return axiosP.post("/listings", listingData);
+    },
+    adjustListing: function (id, data) {
+        return axiosP.put("/listings/" + id, data)
     }
 };
 
