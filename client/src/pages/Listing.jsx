@@ -29,7 +29,18 @@ class Listings extends Component {
   loadListings = () => {
     API.getListings()
       .then(res =>
-        this.setState({ listings: res.data, address: "", startDate: new Date(), notes: "", check: "" })
+        this.setState({
+          listings: res.data,
+          address: "",
+          startDate: new Date(),
+          notes: "",
+          contract: false,
+          mls: Boolean,
+          showingTime: Boolean,
+          compliance: Boolean,
+          disclosures: Boolean,
+          faceBook: Boolean,
+        })
       )
       .catch(err => console.log(err));
   };
@@ -55,27 +66,28 @@ class Listings extends Component {
             <Jumbotron>
               <h1>My Property Listings</h1>
             </Jumbotron>
-            {this.state.listings.map(listing=>{
-            return(
-            <Card style={{ width: '18rem' }}>
-  <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
-  <Card.Body>
-  <DeleteBtn onClick={() => this.deleteListing(listing._id)} />
-    <Card.Title>{listing.address}</Card.Title>
-    <Card.Text>
-    <Moment format="MM/DD/YYYY">
-    {listing.startDate}
-            </Moment>
-    </Card.Text>
-    <Card.Text>
-    {listing.notes}
-    </Card.Text>
-  </Card.Body>
- 
-      <CheckBoxes listing={listing}></CheckBoxes>
-</Card>
+            {this.state.listings.map(listing => {
+              return (
+                <Card style={{ width: '18rem' }}>
+                  <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+                  <Card.Body>
+                    <DeleteBtn onClick={() => this.deleteListing(listing._id)} />
+                    <Card.Title>{listing.address}</Card.Title>
+                    <Card.Text>
+                      <Moment format="MM/DD/YYYY">
+                        {listing.startDate}
+                      </Moment>
+                    </Card.Text>
+                    <Card.Text>
+                      {listing.notes}
+                    </Card.Text>
+                  </Card.Body>
+
+                  <CheckBoxes listing={listing}></CheckBoxes>
+                </Card>
+              )
+            }
             )}
-        )}
           </Col>
         </Row>
       </Container>

@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import { connect } from 'react-redux'
 
-import Splash from "./pages/Splash";
+import Splash from "./pages/Home/Splash";
 import Login from './pages/Login';
 import Listings from "./pages/Listing";
 import AddNewListing from "./pages/AddNewListing";

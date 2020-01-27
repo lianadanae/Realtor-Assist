@@ -1,5 +1,5 @@
 import React from "react";
-import {Alert} from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 
 // This file exports the Input, TextArea, and FormBtn components
 
@@ -28,11 +28,11 @@ export function FormBtn(props) {
 }
 
 export function ServerError(props) {
-  const {axiosError} = props;
+  const { axiosError } = props;
 
   if (!axiosError || !axiosError.response) return null;
 
-  const {statusText, status} = axiosError.response;
+  const { statusText, status } = axiosError.response;
   let errorObj;
 
   if (axiosError.response.data.error) {
@@ -44,10 +44,10 @@ export function ServerError(props) {
 
 
   return (
-<Alert variant='danger'>
-    {status} {statusText}<br />
-    Error Name: {errorObj.name}<br />
-    Error Message: {errorObj.message}
-  </Alert>
+    <Alert variant='danger'>
+      {status} {statusText}<br />
+      Error Name: {errorObj.name}<br />
+      Error Message: {errorObj.message}
+    </Alert>
   );
 }

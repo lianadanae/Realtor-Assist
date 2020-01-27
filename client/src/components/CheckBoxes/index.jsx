@@ -1,73 +1,81 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
+import api from '../../api';
 
 
 class CheckBoxes extends Component {
 
   state = {
-    contract: false,
-    mls: false,
-    showingTime: false,
-    compliance: false,
-    disclosures: false,
-    faceBook: false
+    contract: this.props.listing.contract || false,
+    mls: this.props.listing.mls || false,
+    showingTime: this.props.listing.showingTime || false,
+    compliance: this.props.listing.compliance || false,
+    disclosures: this.props.listing.disclosures || false,
+    faceBook: this.props.listing.faceBook || false
   };
 
   toggleChangeContract = () => {
+    api.adjustListing(this.props.listing._id, { ...this.props.listing, contract: !this.state.contract })
     this.setState(prevState => ({
       contract: !prevState.contract,
     }));
   }
 
   toggleChangeMls = () => {
+    api.adjustListing(this.props.listing._id, { ...this.props.listing, mls: !this.state.mls })
     this.setState(prevState => ({
       mls: !prevState.mls,
     }));
   }
 
   toggleChangeShowingTime = () => {
+    api.adjustListing(this.props.listing._id, { ...this.props.listing, showingTime: !this.state.showingTime })
     this.setState(prevState => ({
       showingTime: !prevState.showingTime,
     }));
   }
 
   toggleChangeCompliance = () => {
+    api.adjustListing(this.props.listing._id, { ...this.props.listing, compliance: !this.state.compliance })
     this.setState(prevState => ({
       compliance: !prevState.compliance,
     }));
   }
 
   toggleChangeDisclosures = () => {
+    api.adjustListing(this.props.listing._id, { ...this.props.listing, disclosures: !this.state.disclosures })
     this.setState(prevState => ({
       disclosures: !prevState.disclosures,
     }));
   }
 
   toggleChangeFaceBook = () => {
+    api.adjustListing(this.props.listing._id, { ...this.props.listing, faceBook: !this.state.faceBook })
     this.setState(prevState => ({
       faceBook: !prevState.faceBook,
     }));
   }
 
-  onSubmit = (e) => {
-    e.preventDefault();
-    let arr = [];
-    for (var key in this.state) {
-      if(this.state[key] === true) {
-        arr.push(key);
-      }
-    }
-    let data = {
-      check: arr.toString() 
-    };
-    axios.post('http://localhost:4000/checks/add', data)
-          .then(res => console.log(res.data));
-  }
+  // onSubmit = (e) => {
+
+  //   e.preventDefault();
+  //   let arr = [];
+  //   for (var key in this.state) {
+  //     if(this.state[key] === true) {
+  //       arr.push(key);
+  //     }
+  //   }
+  //   let data = {
+  //     check: arr.toString() 
+  //   };
+  //   axios.post('http://localhost:4000/checks/add', data)
+  //         .then(res => console.log(res.data));
+  // }
 
   render() {
     return (
       <div className="container">
-        <form onSubmit = {this.onSubmit}>
+        <form onSubmit={this.onSubmit}>
           <div className="form-check">
             <label className="form-check-label">
               <input type="checkbox"
