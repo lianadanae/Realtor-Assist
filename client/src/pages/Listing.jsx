@@ -67,7 +67,7 @@ class Listings extends Component {
             </Jumbotron>
             {this.state.listings.map(listing => {
               return (
-                <Card style={{ width: '18rem' }}>
+                <Card key={listing._id}style={{ width: '18rem' }}>
                   <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
                   <Card.Body>
                     <DeleteBtn onClick={() => this.deleteListing(listing._id)} />
