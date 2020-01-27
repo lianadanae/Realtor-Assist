@@ -9,22 +9,22 @@ const db = require("../models");
 // Connect to the Mongo DB
 mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true});
 
-const demoUserSeed = [
-  {
-    role: "user",
-    firstName: "Demo",
-    lastName: "One",
-    email: "demo1@email.com",
-    username: 'demo1'
-  },
-  {
-    role: "user",
-    firstName: "Demo",
-    lastName: "Two",
-    email: "demo2@email.com",
-    username: 'demo2'
-  }
-]
+// const demoUserSeed = [
+//   {
+//     role: "user",
+//     firstName: "Demo",
+//     lastName: "One",
+//     email: "demo1@email.com",
+//     username: 'demo1'
+//   },
+//   {
+//     role: "user",
+//     firstName: "Demo",
+//     lastName: "Two",
+//     email: "demo2@email.com",
+//     username: 'demo2'
+//   }
+// ]
 
 const listingSeed = [
   {
@@ -37,9 +37,25 @@ const listingSeed = [
 async function seed() {
   try {
     // clear DB
-    await db.Listing.remove({});
-    await db.User.remove({});
+    await db.Listing.deleteOne({});
+    await db.User.deleteOne({});
     
+    const demoUserSeed = [
+      {
+        role: "user",
+        firstName: "Demo",
+        lastName: "One",
+        email: "demo1@email.com",
+        username: 'demo1'
+      },
+      {
+        role: "user",
+        firstName: "Demo",
+        lastName: "Two",
+        email: "demo2@email.com",
+        username: 'demo2'
+      }
+    ]
     // add demo users
     const saltRounds = parseInt(process.env.PASSWORD_SALT_ROUNDS, 10);
     const password = process.env.SEED_USER_PASSWORD;
