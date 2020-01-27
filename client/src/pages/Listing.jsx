@@ -3,7 +3,6 @@ import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../api";
 import { Col, Row, Container } from "../components/Grid";
-//import CardHolder from "../components/CardHolder";
 import { Card } from "react-bootstrap";
 import Moment from 'react-moment';
 import CheckBoxes from "../components/CheckBoxes";

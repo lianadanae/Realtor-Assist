@@ -136,11 +136,11 @@ class CheckBoxes extends Component {
               Advertised on Facebook
             </label>
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <button className="btn btn-primary">
               Submit
             </button>
-          </div>
+          </div> */}
         </form>
       </div>
     );
