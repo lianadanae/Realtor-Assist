@@ -21,6 +21,7 @@ export default {
     saveListing: function (listingData) {
         return axiosP.post("/listings", listingData);
     },
+    //Adjusts the listing when a checkbox is checked
     adjustListing: function (id, data) {
         return axiosP.put("/listings/" + id, data)
     }
