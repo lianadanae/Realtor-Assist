@@ -46,14 +46,16 @@ async function seed() {
         firstName: "Demo",
         lastName: "One",
         email: "demo1@email.com",
-        username: 'demo1'
+        username: 'demo1',
+        password: '1234'
       },
       {
         role: "user",
         firstName: "Demo",
         lastName: "Two",
         email: "demo2@email.com",
-        username: 'demo2'
+        username: 'demo2',
+        password: '1234567'
       }
     ]
     // add demo users
