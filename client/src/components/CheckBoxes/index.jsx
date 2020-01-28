@@ -76,7 +76,7 @@ class CheckBoxes extends Component {
     return (
       <div className="container">
         <form onSubmit={this.onSubmit}>
-          <div className="form-check">
+          <div className="form-check" style={{ fontSize: '1.25rem' }}>
             <label className="form-check-label">
               <input type="checkbox"
                 checked={this.state.contract}
@@ -86,7 +86,7 @@ class CheckBoxes extends Component {
               Signed contract
             </label>
           </div>
-          <div className="form-check">
+          <div className="form-check" style={{ fontSize: '1.25rem' }}>
             <label className="form-check-label">
               <input type="checkbox"
                 checked={this.state.mls}
@@ -96,7 +96,7 @@ class CheckBoxes extends Component {
               Uploaded to the MLS
             </label>
           </div>
-          <div className="form-check">
+          <div className="form-check" style={{ fontSize: '1.25rem' }}>
             <label className="form-check-label">
               <input type="checkbox"
                 checked={this.state.showingTime}
@@ -106,7 +106,7 @@ class CheckBoxes extends Component {
               Showing Time added to listing
             </label>
           </div>
-          <div className="form-check">
+          <div className="form-check" style={{ fontSize: '1.25rem' }}>
             <label className="form-check-label">
               <input type="checkbox"
                 checked={this.state.compliance}
@@ -116,7 +116,7 @@ class CheckBoxes extends Component {
               Compliance form uploaded
             </label>
           </div>
-          <div className="form-check">
+          <div className="form-check" style={{ fontSize: '1.25rem' }}>
             <label className="form-check-label">
               <input type="checkbox"
                 checked={this.state.disclosures}
@@ -126,7 +126,7 @@ class CheckBoxes extends Component {
               Property disclosures uploaded
             </label>
           </div>
-          <div className="form-check">
+          <div className="form-check" style={{ fontSize: '1.25rem' }}>
             <label className="form-check-label">
               <input type="checkbox"
                 checked={this.state.faceBook}
@@ -136,8 +136,9 @@ class CheckBoxes extends Component {
               Advertised on Facebook
             </label>
           </div>
+          <br></br>
           <div className="form-group">
-            <button className="btn btn-primary">
+            <button className="btn btn-primary" style={{ fontSize: '1rem' }}>
               Submit
             </button>
           </div>
