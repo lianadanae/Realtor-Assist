@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import Splash from "./pages/Home/Splash";
 import Login from './pages/Login';
-import Listings from "./pages/Listing";
+import Listings from "./pages/Listings/Listing";
 import AddNewListing from "./pages/AddNewListing";
 import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
