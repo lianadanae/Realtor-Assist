@@ -73,7 +73,7 @@ class AddNewListing extends Component {
         <Modal.Body>
           <Container fluid>
             <Row>
-              <Col size="md-6">
+              <Col size="md-12">
                 <Jumbotron>
                   <h1>Add a new property listing</h1>
                 </Jumbotron>
@@ -96,6 +96,7 @@ class AddNewListing extends Component {
                       name="date"
                       placeholder="Date Listed (required)"
                     />
+                    <FormGroup>
                     <Form.Label>Notes</Form.Label>
                     <TextArea
                       value={this.state.notes}
@@ -103,6 +104,7 @@ class AddNewListing extends Component {
                       name="notes"
                       placeholder="(Optional)"
                     />
+                    </FormGroup>
                   </FormGroup>
                 </Form>
               </Col>
