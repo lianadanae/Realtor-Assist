@@ -1,5 +1,4 @@
 import axios from "axios";
-
 import protectedAPI from './protectedAPI';
 
 
@@ -13,4 +12,3 @@ export default {
   },
   ...protectedAPI
 };
-
