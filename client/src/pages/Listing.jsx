@@ -33,7 +33,7 @@ class Listings extends Component {
           address: "",
           startDate: new Date(),
           notes: "",
-          contract: false,
+          contract: Boolean,
           mls: Boolean,
           showingTime: Boolean,
           compliance: Boolean,
@@ -68,7 +68,7 @@ class Listings extends Component {
             {this.state.listings.map(listing => {
               return (
                 <Card key={listing._id}style={{ width: '18rem' }}>
-                  <Card.Img variant="top" src="holder.js/100px180?text=Image cap" />
+                  <Card.Img variant="top" src="house.png" />
                   <Card.Body>
                     <DeleteBtn onClick={() => this.deleteListing(listing._id)} />
                     <Card.Title>{listing.address}</Card.Title>
