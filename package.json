@@ -11,7 +11,6 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
@@ -35,6 +34,7 @@
     "passport-jwt": "^4.0.0",
     "prop-types": "^15.7.2",
     "randomstring": "^1.1.5",
-    "react-datepicker": "^2.11.0"
-      }
+    "react-datepicker": "^2.11.0",
+    "react-sidebar": "^3.0.2"
+  }
 }
