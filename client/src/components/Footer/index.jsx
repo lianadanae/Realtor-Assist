@@ -1,8 +1,8 @@
 // import React from "react";
 
 // function Footer() {
-//     return <Footer>Footer</Footer>;
+// return <Footer>Footer</Footer>;
 //   }
   
 
-//   export default Footer;
+// export default Footer;

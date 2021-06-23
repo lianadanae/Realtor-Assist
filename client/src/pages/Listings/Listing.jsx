@@ -8,6 +8,8 @@ import Moment from 'react-moment';
 import CheckBoxes from "../../components/CheckBoxes";
 import "./style.css";
 
+
+
 class Listings extends Component {
   state = {
     listings: [],
@@ -34,12 +36,12 @@ class Listings extends Component {
           address: "",
           startDate: new Date(),
           notes: "",
-          contract: Boolean,
-          mls: Boolean,
-          showingTime: Boolean,
-          compliance: Boolean,
-          disclosures: Boolean,
-          faceBook: Boolean,
+          // contract: Boolean,
+          // mls: Boolean,
+          // showingTime: Boolean,
+          // compliance: Boolean,
+          // disclosures: Boolean,
+          // faceBook: Boolean,
         })
       )
       .catch(err => console.log(err));

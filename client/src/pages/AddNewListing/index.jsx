@@ -54,8 +54,10 @@ class AddNewListing extends Component {
         .catch(err => console.log(err));
     }
   };
+  
 
   render() {
+
     return (
       <Modal
         show={true}
@@ -75,9 +77,8 @@ class AddNewListing extends Component {
             <Row>
               <Col size="md-12">
                 <Jumbotron>
-                  <h1>Add a new property listing</h1>
+                  <h1>Add a new property listing</h1> 
                 </Jumbotron>
-
                 <Form>
                   <FormGroup>
                     <Form.Label>Address</Form.Label>
