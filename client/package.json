@@ -7,7 +7,7 @@
     "axios": "^0.21.2",
     "formik": "^2.0.8",
     "jwt-jot": "^1.2.3",
-    "moment": "^2.29.2",
+    "moment": "^2.29.4",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-dom": "^16.12.0",
