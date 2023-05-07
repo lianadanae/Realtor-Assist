@@ -31,6 +31,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "react-devtools": "^4.4.0"
+    "react-devtools": "^4.27.7"
   }
 }
