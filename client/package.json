@@ -4,7 +4,7 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "axios": "^0.21.2",
+    "axios": "^1.6.0",
     "formik": "^2.0.8",
     "jwt-jot": "^1.2.3",
     "moment": "^2.29.4",
